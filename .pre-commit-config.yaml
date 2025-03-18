@@ -24,4 +24,13 @@ repos:
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0  # pinned specific version
     hooks:
-      - id: mypy                      # Perform static type checks
+      - id: mypy
+                            # Perform static type checks
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.4  # Use the latest stable version
+    hooks:
+      - id: ruff  # Runs Ruff to check for linting errors (including naming conventions)
+        args:
+          - --fix  # Automatically fixes issues when possible
+          - check  # Ensures naming convention rules are checked
+      - id: ruff-format  # Ensures code is formatted using Ruff
