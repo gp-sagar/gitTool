@@ -14,4 +14,14 @@ class hello_world_class(APIView):
         return Response(resp)
 
 
+class Greet_class(APIView):
+    def get(self, request):
+        resp = {
+            "status": "Success",
+            "Message": "Good Morning",
+        }
+        return Response(resp)
+
+
+Greet = Greet_class.as_view()
 HelloWorld = hello_world_class.as_view()
