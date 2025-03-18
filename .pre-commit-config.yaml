@@ -1,12 +1,27 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+  # Pre-commit official hooks for basic file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
     hooks:
-    -   id: check-yaml
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
-    -   id: check-added-large-files
--   repo: https://github.com/psf/black
-    rev: 22.10.0
+      - id: check-yaml                # Check YAML files for syntax errors
+      - id: end-of-file-fixer         # Ensure files end with a newline
+      - id: trailing-whitespace       # Remove trailing whitespace from files
+      - id: check-added-large-files   # Prevent large files from being committed
+
+  # Black — opinionated Python code formatter
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
     hooks:
-    -   id: black
+      - id: black                     # Auto-format Python code
+
+  # autopep8 — automatic PEP8 compliance formatting
+  - repo: https://github.com/hhatto/autopep8
+    rev: v2.3.2
+    hooks:
+      - id: autopep8                  # Auto-format Python code according to PEP8 guidelines
+
+  # mypy — static type checker for Python
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0  # pinned specific version
+    hooks:
+      - id: mypy                      # Perform static type checks

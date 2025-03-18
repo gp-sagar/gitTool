@@ -1,12 +1,10 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 
 # Create your views here.
 
 
-class HelloWorldClass(APIView):
+class hello_world_class(APIView):
     def get(self, request):
         resp = {
             "status": "Success",
@@ -16,4 +14,4 @@ class HelloWorldClass(APIView):
         return Response(resp)
 
 
-HelloWorld = HelloWorldClass.as_view()
+HelloWorld = hello_world_class.as_view()
