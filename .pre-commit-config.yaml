@@ -25,3 +25,12 @@ repos:
     rev: v1.15.0  # pinned specific version
     hooks:
       - id: mypy
+
+  - repo: local
+    hooks:
+      - id: check-empty-files
+        name: Check for empty Python files
+        entry: python custom_hooks/check_empty_files.py
+        language: system
+        types: [python]
+        exclude: '__init__\.py'
